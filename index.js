@@ -1,9 +1,9 @@
-const env = process.env.NODE_ENV || 'development';
+const express = require('express');
+const hbs = require('express-handlebars');
 
-const config = require('./config/config')[env];
-const app = require('express')();
+const port = 5000;
+const app = express();
+app.engine('.hbs', hbs({ extname: '.hbs' }));
+app.set('view engine', '.hbs');
 
-require('./config/express')(app);
-require('./config/routes')(app);
-
-app.listen(config.port, console.log(`Listening on port ${config.port}! Now its up to you...`));
+app.listen(port, () => console.log(`Server is on port ${port}`));
