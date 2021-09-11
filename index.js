@@ -14,9 +14,9 @@ app.use('/static', express.static('static'));
 
 app.get('/', catalog);
 app.get('/about', about);
-app.get('/details', details);
+app.get('/details/:id', details);
 app.get('/create', create);
-app.post('/create', post);
+//app.post('/create', post);
 
 app.all('*', notFound);
 

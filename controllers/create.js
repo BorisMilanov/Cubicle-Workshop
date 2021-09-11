@@ -1,8 +1,8 @@
 module.exports = {
-    create(res, req) {
-        res.render('create');
+    create(req, res) {
+        res.render('create.hbs',{title:'Create Cube'});
     },
-    post(res, req) {
+    post(req, res) {
         res.redirect('/');
     }
 }
